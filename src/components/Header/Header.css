@@ -1,0 +1,68 @@
+/* =========================
+   HEADER LAYOUT
+========================= */
+
+.site-header {
+  position: sticky;
+  top: 0;
+  background-color: #ffffff;
+  border-bottom: 1px solid #e5e5e5;
+  z-index: 1000;
+}
+
+/* Contenedor interno */
+.header-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 24px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+/* =========================
+   LOGO
+========================= */
+
+.logo {
+  font-size: 1.2rem;
+  font-weight: 700;
+  text-decoration: none;
+  color: #111;
+}
+
+.logo:focus-visible {
+  outline: 3px solid #000;
+  outline-offset: 4px;
+}
+
+/* =========================
+   NAV
+========================= */
+
+.nav-list {
+  display: flex;
+  gap: 20px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-list a {
+  text-decoration: none;
+  color: #333;
+  font-weight: 500;
+  padding: 6px 8px;
+  border-radius: 4px;
+}
+
+/* Hover */
+.nav-list a:hover {
+  color: #000;
+}
+
+/* Focus accesible WCAG */
+.nav-list a:focus-visible {
+  outline: 3px solid #000;
+  outline-offset: 3px;
+}

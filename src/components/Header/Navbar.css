@@ -1,0 +1,49 @@
+/* =========================
+   NAVBAR BASE
+========================= */
+
+.nav-list {
+  display: flex;
+  flex-direction: row;   /* horizontal */
+  gap: 20px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  align-items: center;
+}
+
+/* cada item */
+.nav-list li {
+  display: flex;
+}
+
+/* links */
+.nav-link {
+  text-decoration: none;
+  color: #332244;
+  font-weight: 600;
+  padding: 6px 8px;
+  border-radius: 6px;
+  transition: background 200ms ease;
+}
+
+.nav-link:hover {
+  background: #f4ecff;
+}
+
+.nav-link:focus-visible {
+  outline: 3px solid #5b8cff;
+  outline-offset: 3px;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 768px) {
+  .nav-list {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+}

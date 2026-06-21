@@ -71,8 +71,7 @@ select {
   --space-lg: 2rem;
   --space-xl: 4rem;
 
-  --transition:
-    200ms ease;
+  --transition: 200ms ease;
 }
 
 /* ==========================
@@ -81,26 +80,15 @@ select {
 
 body {
   min-height: 100vh;
-
-  font-family:
-    Inter,
-    system-ui,
-    sans-serif;
-
+  font-family: Inter, system-ui, sans-serif;
   color: var(--color-text);
-
-  background:
-    var(--color-background);
-
+  background: var(--color-background);
   line-height: 1.6;
-
-  text-rendering:
-    optimizeLegibility;
+  text-rendering: optimizeLegibility;
 }
 
 a {
   color: inherit;
-
   text-decoration: none;
 }
 
@@ -114,33 +102,20 @@ button {
 
 :focus-visible {
   outline: 3px solid var(--focus-color);
-
   outline-offset: 3px;
 }
 
+/* Skip link (ÚNICO Y CORRECTO) */
 .skip-link {
   position: absolute;
-
+  top: -40px;
   left: 1rem;
-
-  top: -50px;
-
-  z-index: 999;
-
-  padding:
-    .75rem 1rem;
-
-  background:
-    black;
-
-  color:
-    white;
-
-  border-radius:
-    var(--radius);
-
-  transition:
-    var(--transition);
+  background: #000;
+  color: #fff;
+  padding: 10px 16px;
+  z-index: 1000;
+  border-radius: 6px;
+  text-decoration: none;
 }
 
 .skip-link:focus {
@@ -148,7 +123,6 @@ button {
 }
 
 /* Reduce motion */
-
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;
@@ -157,20 +131,4 @@ button {
   * {
     transition: none;
   }
-}
-
-.skip-link {
-  position: absolute;
-  top: -40px;
-  left: 0;
-  background: #000;
-  color: #fff;
-  padding: 10px 16px;
-  z-index: 1000;
-  text-decoration: none;
-  border-radius: 4px;
-}
-
-.skip-link:focus {
-  top: 10px;
 }

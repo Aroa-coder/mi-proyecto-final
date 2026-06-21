@@ -1,12 +1,14 @@
-import Header from './components/Header'
-import MainContent from './components/MainContent'
-import Footer from './components/Footer'
-import SkipToContent from './components/SkipToContent'
+import Header from './components/Header/Header'
+import MainContent from './components/MainContent/MainContent'
+import Footer from './components/Footer/Footer'
 
 function App() {
   return (
     <>
-      <SkipToContent />
+      {/* Skip link accesible (debe estar aquí arriba del todo) */}
+      <a href="#main-content" className="skip-link">
+        Saltar al contenido principal
+      </a>
 
       <Header />
 

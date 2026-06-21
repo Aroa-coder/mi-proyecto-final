@@ -1,0 +1,58 @@
+
+/* ==========================
+   FOOTER
+========================== */
+
+footer {
+
+  margin-top: 5rem;
+
+  padding: 3rem 2rem;
+
+  background: #faf7ff;
+
+  border-top: 1px solid #e8ddff;
+
+  text-align: center;
+
+}
+
+
+footer section {
+
+  padding: 0;
+
+}
+
+footer a {
+
+  text-decoration: none;
+
+  color: #6c4ab6;
+
+  font-weight: 600;
+
+}
+
+footer a:hover {
+
+  text-decoration: underline;
+
+}
+
+footer a:focus {
+
+  outline: 3px solid #5b8cff;
+
+  outline-offset: 4px;
+
+}
+
+
+footer p {
+
+  margin-top: 2rem;
+
+  color: #555;
+
+}

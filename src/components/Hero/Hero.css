@@ -1,0 +1,82 @@
+.hero {
+
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+
+  gap: 2rem;
+
+  text-align: center;
+
+}
+
+.hero img {
+
+  width: 220px;
+
+  border-radius: 50%;
+
+}
+
+.hero-content {
+
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 1.5rem;
+
+}
+
+.hero-actions {
+
+  display: flex;
+
+  gap: 1rem;
+
+  flex-wrap: wrap;
+
+}
+
+.primary-button,
+.secondary-button {
+
+  padding: .9rem 1.4rem;
+
+  border-radius: 10px;
+
+  text-decoration: none;
+
+}
+
+.primary-button {
+
+  background: #6c4ab6;
+
+  color: white;
+
+}
+
+.secondary-button {
+
+  background: #8a68d1;
+
+  color: white;
+
+}
+
+@media (min-width:768px) {
+
+.hero {
+
+flex-direction: row;
+
+justify-content: space-between;
+
+text-align: left;
+
+}
+
+}
