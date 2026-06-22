@@ -1,39 +1,93 @@
 import './ProjectCard.css'
 
 function ProjectCard({
+
   title,
+
   description,
+
+  technologies,
+
+  buttonText,
+
+  buttonLink,
+
   image,
+
   alt
+
 }) {
+
   return (
 
-    <article className="project-card">
-
-      <h3>
-        {title}
-      </h3>
-
-      <p>
-        {description}
-      </p>
+    <article
+      className="project-card"
+    >
 
       <img
         src={image}
         alt={alt}
-        loading="lazy"
       />
 
-      <a
-        href="/"
-        className="project-button"
+
+      <div
+        className="project-content"
       >
-        Ver más
-      </a>
+
+        <h3>
+
+          {title}
+
+        </h3>
+
+
+        <p
+          className="project-description"
+        >
+
+          {description}
+
+        </p>
+
+
+
+        <p
+          className="technologies"
+        >
+
+          <strong>
+
+            Tecnologías:
+
+          </strong>
+
+          {' '}
+
+          {technologies}
+
+        </p>
+
+
+
+        <a
+          href={buttonLink}
+          className="project-button"
+
+          target="_blank"
+
+          rel="noopener noreferrer"
+        >
+
+          {buttonText}
+
+        </a>
+
+      </div>
 
     </article>
 
   )
+
 }
 
 export default ProjectCard

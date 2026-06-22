@@ -1,292 +1,229 @@
-#inicio {
+/* ==========================
+   SOBRE MÍ
+========================== */
+
+#sobre-mi {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  text-align: center;
-  gap: var(--space-lg);
+  gap: 1.5rem;
 }
 
-#inicio img {
-  width: 220px;
-  max-width: 100%;
-  border-radius: 50%;
-  object-fit: cover;
-  border: 4px solid #d9c2ff;
+/* TARJETAS */
+
+#sobre-mi article,
+#sobre-mi aside {
+  background: white;
+  padding: 1.8rem;
+  border-radius: 18px;
+  box-shadow: 0 8px 20px rgba(0,0,0,.06);
 }
 
+/* TEXTO */
 
- #proyectos article {
-
+#sobre-mi article {
   display: flex;
-
   flex-direction: column;
-
-  height: 100%;
-
-  background: #ffffff;
-
-  padding: 1.5rem;
-
-  border-radius: 16px;
-
-  box-shadow:
-    0 6px 16px
-    rgba(0,0,0,.08);
-
+  gap: 1rem;
 }
-#proyectos p {
 
-  flex-grow: 1;
-
+#sobre-mi article p {
+  margin: 0;
 }
-#proyectos img {
 
-  width: 100%;
+/* VALORES */
 
-  height: 220px;
-
-  object-fit: cover;
-
-  border-radius: 12px;
-
+#sobre-mi aside h3 {
+  margin-bottom: 1rem;
 }
-#habilidades ul {
+
+#sobre-mi aside ul {
   display: flex;
   flex-wrap: wrap;
-  gap: .75rem;
+  gap: .8rem;
   list-style: none;
+  padding: 0;
 }
 
-#habilidades li {
+#sobre-mi aside li {
   background: #f1e7ff;
-  padding: .7rem 1rem;
+  color: #2e166a; /* CORREGIDO: Contraste alto para validación WCAG AA */
+  padding: .8rem 1rem;
   border-radius: 999px;
+  font-weight: 600;
 }
-
-#experiencia article {
-  border-left: 4px solid #d9c2ff;
-  padding-left: 1.5rem;
-}
-
 
 /* ==========================
    PROYECTOS
 ========================== */
 
 #proyectos {
-
   display: grid;
-
   gap: 2rem;
-
 }
-
 
 #proyectos h2 {
-
   grid-column: 1 / -1;
-
 }
-
-
-#proyectos article {
-
-  display: flex;
-
-  flex-direction: column;
-
-  gap: 1rem;
-
-  background: #ffffff;
-
-  padding: 1.5rem;
-
-  border-radius: 16px;
-
-  box-shadow:
-    0 6px 16px
-    rgba(0,0,0,.08);
-
-}
-
-
-#proyectos img {
-
-  width: 100%;
-
-  height: 220px;
-
-  object-fit: cover;
-
-  border-radius: 12px;
-
-}
-
-
-/* Desktop */
-
-@media (min-width: 768px) {
-
-  #proyectos {
-
-    grid-template-columns:
-      repeat(3, 1fr);
-
-  }
-
-}
-
 
 /* ==========================
-   HABILIDADES
+   HABILIDADES (ALINEACIÓN Y CONTRASTE ACCESIBLE)
 ========================== */
 
 #habilidades {
-
-  display: flex;
-
-  flex-direction: column;
-
-  gap: 2rem;
-
+  display: grid;
+  gap: 1.5rem;
+  align-items: stretch; /* Fuerza a las columnas a estirarse uniformemente */
 }
 
 #habilidades article {
-
+  background: white;
+  padding: 2rem;
+  border-radius: 18px;
+  box-shadow: 0 8px 20px rgba(0,0,0,.08);
+  transition: transform .25s;
+  
+  /* Convierte la tarjeta en un contenedor flex para controlar su altura interna */
   display: flex;
-
   flex-direction: column;
+  height: 100%;
+}
 
-  gap: 1rem;
+#habilidades article:hover {
+  transform: translateY(-4px);
+}
 
+#habilidades h3 {
+  color: #6c4ab6;
+  margin-bottom: 1rem;
 }
 
 #habilidades ul {
-
   display: flex;
-
   flex-wrap: wrap;
-
   gap: .75rem;
-
   list-style: none;
-
   padding: 0;
-
+  margin: 0;
+  flex-grow: 1; /* Empuja el contenedor para ocupar todo el espacio disponible */
 }
 
 #habilidades li {
-
   background: #f1e7ff;
-
-  color: #332244;
-
-  padding: .7rem 1rem;
-
+  color: #2e166a; /* CORREGIDO: Contraste alto para validación WCAG AA */
+  padding: .75rem 1rem;
   border-radius: 999px;
-
-  font-size: .95rem;
-
   font-weight: 600;
-
+  align-self: flex-start; /* Evita estiramientos raros en las píldoras */
 }
-
 
 /* ==========================
    EXPERIENCIA
 ========================== */
 
 #experiencia {
-
   display: flex;
-
   flex-direction: column;
-
   gap: 2rem;
-
 }
 
 #experiencia article {
-
+  background: white;
+  padding: 1.8rem;
   border-left: 4px solid #d9c2ff;
-
-  padding-left: 1.5rem;
-
+  border-radius: 0 16px 16px 0;
+  box-shadow: 0 8px 20px rgba(0,0,0,.05);
 }
-
-
-/* ==========================
-   FORMULARIO CONTACTO
-========================== */
-
-#contacto form {
-
-  display: flex;
-
-  flex-direction: column;
-
-  gap: 1.25rem;
-
-  max-width: 700px;
-
-  margin-inline: auto;
-
-}
-
-#contacto div {
-
-  display: flex;
-
-  flex-direction: column;
-
-}
-
-#contacto label {
-
-  margin-bottom: .5rem;
-
-  font-weight: 600;
-
-}
-
-#contacto input,
-#contacto textarea {
-
-  padding: .9rem;
-
-  border: 2px solid #d6d6d6;
-
-  border-radius: 10px;
-
-  font-size: 1rem;
-
-}
-
-#contacto button {
-
-  align-self: flex-start;
-
-  padding: .9rem 1.5rem;
-
-  border: none;
-
-  border-radius: 10px;
-
-  background: #6c4ab6;
-
-  color: white;
-
-  cursor: pointer;
-
-}
-
 
 /* ==========================
    CONTACTO
 ========================== */
 
 #contacto {
-
   text-align: center;
+}
 
+#contacto form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  max-width: 700px;
+  margin-inline: auto;
+}
+
+#contacto div {
+  display: flex;
+  flex-direction: column;
+}
+
+#contacto label {
+  margin-bottom: .5rem;
+  font-weight: 600;
+}
+
+#contacto input,
+#contacto textarea {
+  padding: 1rem;
+  border: 2px solid #d6d6d6;
+  border-radius: 14px;
+  font-size: 1rem;
+  background: white;
+  transition: transform .2s, border-color .2s, box-shadow .2s;
+}
+
+/* Hover */
+
+#contacto input:hover,
+#contacto textarea:hover {
+  border-color: #bfa5ec;
+}
+
+/* Focus */
+
+#contacto input:focus,
+#contacto textarea:focus {
+  border-color: #6c4ab6;
+  box-shadow: 0 0 0 4px rgba(108,74,182,.15);
+  outline: none;
+  transform: translateY(-1px);
+}
+
+/* Textarea */
+
+#contacto textarea {
+  resize: vertical;
+  min-height: 180px;
+}
+
+#contacto button {
+  align-self: center;
+  padding: .9rem 1.6rem;
+  border: none;
+  border-radius: 10px;
+  background: #6c4ab6;
+  color: white;
+  cursor: pointer;
+  transition: transform .25s;
+}
+
+#contacto button:hover {
+  transform: translateY(-2px);
+}
+
+
+/* ==========================
+   RESPONSIVE (OPTIMIZADO Y AUTO-AJUSTABLE)
+========================== */
+
+@media (min-width: 768px) {
+  #habilidades {
+    /* Cambiamos el repeat(3, 1fr) estricto por auto-fit. 
+       Esto hace que si hay 3 cajas quepan perfectas, pero si hay 4 o el espacio es justo, 
+       se acomoden solas de manera equilibrada sin romper el diseño */
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  }
+
+  #proyectos {
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    align-items: stretch;
+  }
 }

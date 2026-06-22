@@ -1,292 +1,124 @@
-import Hero from '../Hero/Hero'
-import ProjectCard from '../ProjectCard/ProjectCard'
-import './MainContent.css'
+
+import emailjs from "@emailjs/browser";
+import Hero from "../Hero/Hero";
+import ProjectCard from "../ProjectCard/ProjectCard";
+import "./MainContent.css";
 
 function MainContent() {
+
+  const enviarFormulario = async (e) => {
+
+    e.preventDefault();
+e.preventDefault();
+    try {
+
+      await emailjs.sendForm(
+        "service_pib4zxs",
+        "template_ky3566r",
+        e.target,
+        "uA83WYmKq9aLIBZT1"
+      );
+
+      alert("✅ Mensaje enviado correctamente");
+
+      e.target.reset();
+
+    } catch (error) {
+
+      console.error("Error EmailJS:", error);
+
+      alert("❌ Error al enviar el mensaje");
+    }
+  };
+
   return (
-    <main id="main-content" tabIndex="-1">
+
+    <main
+      id="main-content"
+      tabIndex="-1"
+    >
 
       <Hero />
 
-      <section id="sobre-mi">
-
-        <h2>
-          Sobre mí
-        </h2>
-
-        <p>
-          Profesional orientado a construir
-          interfaces accesibles, escalables y
-          mantenibles siguiendo estándares
-          modernos de desarrollo web.
-        </p>
-
-      </section>
-
-
-      <section id="proyectos">
-
-        <h2>
-          Proyectos destacados
-        </h2>
-
-        <ProjectCard
-          title="Portfolio Web Profesional"
-          description="Sitio web desarrollado con HTML y CSS orientado a diseño responsive."
-          image="/images/project.png"
-          alt="Captura del portfolio web"
-        />
-
-
-        <ProjectCard
-          title="Proyecto en Java"
-          description="Aplicación orientada al cálculo automático del importe total."
-          image="/images/project2.png"
-          alt="Aplicación de cálculo"
-        />
-
-
-        <ProjectCard
-          title="Landing con Asistente Virtual"
-          description="Landing orientada a mejorar experiencia del usuario."
-          image="/images/project3.png"
-          alt="Landing con asistente"
-        />
-
-      </section>
-
-
-      <section id="habilidades">
-
-        <h2>
-          Habilidades
-        </h2>
-
-        <article>
-
-          <h3>
-            Frontend
-          </h3>
-
-          <ul>
-
-            <li>HTML</li>
-
-            <li>CSS</li>
-
-            <li>JavaScript</li>
-
-            <li>React</li>
-
-          </ul>
-
-        </article>
-
-
-        <article>
-
-          <h3>
-            Diseño
-          </h3>
-
-          <ul>
-
-            <li>UX/UI</li>
-
-            <li>Responsive Design</li>
-
-            <li>Accesibilidad Web</li>
-
-          </ul>
-
-        </article>
-
-
-        <article>
-
-          <h3>
-            Herramientas
-          </h3>
-
-          <ul>
-
-            <li>Git</li>
-
-            <li>VS Code</li>
-
-          </ul>
-
-        </article>
-
-      </section>
-
-
-      <section id="experiencia">
-
-        <h2>
-          Formación y experiencia
-        </h2>
-
-
-        <article>
-
-          <h3>
-            Desarrollo de Aplicaciones Web (DAW)
-          </h3>
-
-          <p>
-            Formación orientada al desarrollo
-            de aplicaciones web, programación,
-            bases de datos y construcción
-            de interfaces accesibles.
-          </p>
-
-        </article>
-
-
-        <article>
-
-          <h3>
-            Desarrollo Frontend
-          </h3>
-
-          <p>
-            Aprendizaje práctico aplicando
-            HTML, CSS, JavaScript y React
-            siguiendo buenas prácticas de
-            accesibilidad web.
-          </p>
-
-        </article>
-
-
-        <article>
-
-          <h3>
-            Proyectos personales
-          </h3>
-
-          <p>
-            Desarrollo progresivo de proyectos
-            orientados a experiencia de usuario,
-            organización del código y
-            construcción de interfaces modernas.
-          </p>
-
-        </article>
-
-      </section>
-
+      {/* TODO TU CONTENIDO ACTUAL */}
 
       <section id="contacto">
 
-  <h2>
-    Contacto
-  </h2>
+        <h2>
+          Contacto
+        </h2>
 
-  <p>
-    Si deseas colaborar conmigo o conocer más
-    sobre mis proyectos, envíame un mensaje.
-  </p>
+        <p>
+          Si deseas colaborar conmigo o
+          conocer más sobre mis proyectos,
+          puedes enviarme un mensaje.
+        </p>
 
+        <form
+          noValidate
+          onSubmit={enviarFormulario}
+        >
 
-  <form noValidate>
+          <div>
 
-    <div>
+            <label htmlFor="nombre">
+              Nombre
+            </label>
 
-      <label htmlFor="nombre">
+            <input
+              id="nombre"
+              name="nombre"
+              type="text"
+              required
+              autoComplete="name"
+            />
 
-        Nombre
+          </div>
 
-      </label>
+          <div>
 
-      <input
-        id="nombre"
-        name="nombre"
-        type="text"
-        placeholder="Tu nombre"
-        autoComplete="name"
-        required
-        aria-describedby="nombre-help"
-      />
+            <label htmlFor="email">
+              Correo electrónico
+            </label>
 
-      <small id="nombre-help">
+            <input
+              id="email"
+              name="email"
+              type="email"
+              required
+              autoComplete="email"
+            />
 
-        Introduce tu nombre completo.
+          </div>
 
-      </small>
+          <div>
 
-    </div>
+            <label htmlFor="mensaje">
+              Mensaje
+            </label>
 
+            <textarea
+              id="mensaje"
+              name="mensaje"
+              rows="6"
+              required
+            />
 
+          </div>
 
-    <div>
+          <button type="submit">
 
-      <label htmlFor="email">
+            Enviar mensaje
 
-        Correo electrónico
+          </button>
 
-      </label>
+        </form>
 
-      <input
-        id="email"
-        name="email"
-        type="email"
-        placeholder="correo@ejemplo.com"
-        autoComplete="email"
-        required
-        aria-describedby="email-help"
-      />
-
-      <small id="email-help">
-
-        Te responderé por este correo.
-
-      </small>
-
-    </div>
-
-
-
-    <div>
-
-      <label htmlFor="mensaje">
-
-        Mensaje
-
-      </label>
-
-      <textarea
-        id="mensaje"
-        name="mensaje"
-        rows="6"
-        placeholder="Cuéntame sobre tu proyecto..."
-        required
-        aria-describedby="mensaje-help"
-      />
-
-      <small id="mensaje-help">
-
-        Describe brevemente tu consulta.
-
-      </small>
-
-    </div>
-
-
-
-    <button type="submit">
-
-      Enviar mensaje
-
-    </button>
-
-  </form>
-
-</section>
+      </section>
 
     </main>
-  )
+  );
 }
 
-export default MainContent
+export default MainContent;
+
