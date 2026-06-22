@@ -1,93 +1,45 @@
-import './ProjectCard.module.css'
+import styles from "./ProjectCard.module.css";
 
 function ProjectCard({
-
   title,
-
   description,
-
   technologies,
-
   buttonText,
-
   buttonLink,
-
   image,
-
-  alt
-
+  alt,
 }) {
-
   return (
+    <article className={styles.card}>
+      <div className={styles.imageWrapper}>
+        <img
+          src={image}
+          alt={alt}
+          className={styles.image}
+          loading="lazy"
+        />
+      </div>
 
-    <article
-      className="project-card"
-    >
+      <div className={styles.content}>
+        <h3 className={styles.title}>{title}</h3>
 
-      <img
-        src={image}
-        alt={alt}
-      />
+        <p className={styles.description}>{description}</p>
 
-
-      <div
-        className="project-content"
-      >
-
-        <h3>
-
-          {title}
-
-        </h3>
-
-
-        <p
-          className="project-description"
-        >
-
-          {description}
-
+        <p className={styles.technologies}>
+          <strong>Tecnologías:</strong> {technologies}
         </p>
-
-
-
-        <p
-          className="technologies"
-        >
-
-          <strong>
-
-            Tecnologías:
-
-          </strong>
-
-          {' '}
-
-          {technologies}
-
-        </p>
-
-
 
         <a
           href={buttonLink}
-          className="project-button"
-
+          className={styles.button}
           target="_blank"
-
           rel="noopener noreferrer"
         >
-
           {buttonText}
-
         </a>
-
       </div>
-
     </article>
-
-  )
-
+  );
 }
 
-export default ProjectCard
+export default ProjectCard;
