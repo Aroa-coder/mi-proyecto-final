@@ -1,24 +1,16 @@
-import Navbar from './Navbar'
-import './Header.module.css'
+import Navbar from "./Navbar";
+import styles from "./Header.module.css";
 
 function Header() {
   return (
-    <header className="site-header">
+    <header className={styles.header}>
+      <a href="#inicio" className={styles.logo}>
+        Aroa Martín <span>🌸</span>
+      </a>
 
-      <div className="header-container">
-
-        {/* Logo / identidad */}
-        <a href="#inicio" className="logo">
-          Aroa Martín 🌸
-        </a>
-
-        {/* Navegación */}
-        <Navbar />
-
-      </div>
-
+      <Navbar />
     </header>
-  )
+  );
 }
 
-export default Header
+export default Header;
