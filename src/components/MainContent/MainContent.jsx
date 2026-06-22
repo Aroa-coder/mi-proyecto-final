@@ -24,11 +24,7 @@ function MainContent() {
   };
 
   return (
-    <main
-      id="main-content"
-      className={styles.main}
-      tabIndex="-1"
-    >
+    <main id="main-content" className={styles.main} tabIndex="-1">
       <Hero />
 
       <section id="sobre-mi" className={styles.sobreMi}>
@@ -184,6 +180,7 @@ function MainContent() {
               type="text"
               required
               autoComplete="name"
+              placeholder="Tu nombre"
             />
           </div>
 
@@ -196,6 +193,7 @@ function MainContent() {
               type="email"
               required
               autoComplete="email"
+              placeholder="tu@email.com"
             />
           </div>
 
@@ -207,12 +205,11 @@ function MainContent() {
               name="mensaje"
               rows="6"
               required
+              placeholder="Escribe tu mensaje..."
             />
           </div>
 
-          <button type="submit">
-            Enviar mensaje
-          </button>
+          <button type="submit">Enviar mensaje</button>
         </form>
       </section>
     </main>

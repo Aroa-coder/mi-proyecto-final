@@ -1,3 +1,7 @@
+/* =========================
+   HEADER FUTURISTA
+========================= */
+
 .header {
   position: sticky;
   top: 0;
@@ -15,9 +19,9 @@
   background:
     radial-gradient(circle at 20% 50%, rgba(139, 92, 246, 0.28), transparent 35%),
     radial-gradient(circle at 80% 50%, rgba(34, 211, 238, 0.22), transparent 35%),
-    linear-gradient(135deg, #070711 0%, #111124 100%) !important;
+    linear-gradient(135deg, #070711 0%, #111124 100%);
 
-  color: #f8f7ff !important;
+  color: #f8f7ff;
 
   border-bottom: 1px solid rgba(34, 211, 238, 0.35);
 
@@ -29,11 +33,15 @@
     0 0 45px rgba(34, 211, 238, 0.12);
 }
 
+/* =========================
+   LOGO
+========================= */
+
 .logo {
-  color: transparent !important;
+  color: transparent;
   text-decoration: none;
 
-  font-size: 1.15rem;
+  font-size: clamp(1rem, 2vw, 1.2rem);
   font-weight: 900;
   white-space: nowrap;
 
@@ -51,12 +59,31 @@
   -webkit-background-clip: text;
 
   animation: logoGradientMove 6s ease-in-out infinite;
+
+  transition:
+    filter 0.3s ease,
+    transform 0.3s ease;
+}
+
+.logo:hover {
+  transform: translateY(-2px);
+  filter: drop-shadow(0 0 12px rgba(34, 211, 238, 0.45));
 }
 
 .logo span {
   color: #ec4899;
   filter: drop-shadow(0 0 8px rgba(236, 72, 153, 0.9));
 }
+
+.logo:focus-visible {
+  outline: 3px solid #22d3ee;
+  outline-offset: 6px;
+  border-radius: 8px;
+}
+
+/* =========================
+   ANIMACIÓN LOGO
+========================= */
 
 @keyframes logoGradientMove {
   0% {
@@ -72,11 +99,49 @@
   }
 }
 
+/* =========================
+   RESPONSIVE TABLET
+========================= */
+
+@media (max-width: 900px) {
+  .header {
+    gap: 1.2rem;
+    padding: 1rem 1.4rem;
+  }
+}
+
+/* =========================
+   RESPONSIVE MÓVIL
+========================= */
+
 @media (max-width: 768px) {
   .header {
     flex-direction: column;
     justify-content: center;
+    align-items: center;
+
     gap: 1rem;
     padding: 1rem;
+
+    text-align: center;
+  }
+
+  .logo {
+    font-size: 1.05rem;
+  }
+}
+
+/* =========================
+   MÓVIL PEQUEÑO
+========================= */
+
+@media (max-width: 420px) {
+  .header {
+    padding: 0.9rem 0.8rem;
+    gap: 0.8rem;
+  }
+
+  .logo {
+    font-size: 1rem;
   }
 }

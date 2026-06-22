@@ -15,6 +15,11 @@
     linear-gradient(180deg, #070711 0%, #10101f 45%, #080812 100%);
 }
 
+.main,
+.main * {
+  box-sizing: border-box;
+}
+
 .main section {
   padding: 4rem 1.5rem;
 }
@@ -72,6 +77,15 @@
     inset 0 0 25px rgba(255, 255, 255, 0.03);
 
   backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+}
+
+.sobreMi article > *,
+.sobreMi aside > *,
+.habilidades article > *,
+.experiencia article > * {
+  position: relative;
+  z-index: 1;
 }
 
 .sobreMi article::before,
@@ -91,6 +105,7 @@
 
   transform: translateX(-100%);
   transition: transform 0.7s ease;
+  pointer-events: none;
 }
 
 .sobreMi article:hover::before,
@@ -169,25 +184,6 @@
 
 .proyectos h2 {
   grid-column: 1 / -1;
-}
-
-@media (min-width: 768px) {
-  .proyectos {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-    align-items: stretch;
-  }
-}
-
-@media (max-width: 1100px) {
-  .proyectos {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-}
-
-@media (max-width: 768px) {
-  .proyectos {
-    grid-template-columns: 1fr;
-  }
 }
 
 /* ==========================
@@ -334,6 +330,7 @@
     inset 0 0 24px rgba(255, 255, 255, 0.03);
 
   backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
 }
 
 .contacto form div {
@@ -360,7 +357,7 @@
   border-radius: 16px;
 
   color: #ffffff;
-  background: rgba(7, 7, 17, 0.75);
+  background-color: rgba(7, 7, 17, 0.75);
 
   border: 1px solid rgba(34, 211, 238, 0.25);
   box-shadow: inset 0 0 18px rgba(255, 255, 255, 0.03);
@@ -368,7 +365,7 @@
   transition:
     border-color 0.3s ease,
     box-shadow 0.3s ease,
-    background 0.3s ease;
+    background-color 0.3s ease;
 }
 
 .contacto input::placeholder,
@@ -380,7 +377,7 @@
 .contacto textarea:focus {
   outline: none;
 
-  background: rgba(7, 7, 17, 0.95);
+  background-color: rgba(7, 7, 17, 0.95);
   border-color: #22d3ee;
 
   box-shadow:
@@ -430,21 +427,31 @@
 }
 
 /* ==========================
-   RESPONSIVE
+   RESPONSIVE MAINCONTENT
 ========================== */
 
+/* TABLET */
 @media (min-width: 768px) {
   .proyectos {
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    grid-template-columns: repeat(2, minmax(0, 1fr));
     align-items: stretch;
   }
 
   .habilidades {
-    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }
 
-@media (min-width: 900px) {
+/* ESCRITORIO */
+@media (min-width: 1100px) {
+  .proyectos {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .habilidades {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
   .sobreMi {
     display: grid;
     grid-template-columns: 2fr 1fr;
@@ -456,9 +463,15 @@
   }
 }
 
-@media (max-width: 480px) {
+/* MÓVIL Y TABLET PEQUEÑA */
+@media (max-width: 767px) {
   .main section {
     padding: 3rem 1rem;
+  }
+
+  .proyectos,
+  .habilidades {
+    grid-template-columns: 1fr;
   }
 
   .sobreMi article,
@@ -474,6 +487,28 @@
 
   .contacto button {
     width: 100%;
+  }
+}
+
+/* MÓVIL MUY PEQUEÑO */
+@media (max-width: 420px) {
+  .main h2 {
+    font-size: 2rem;
+  }
+
+  .main section {
+    padding: 2.5rem 0.9rem;
+  }
+
+  .sobreMi article,
+  .sobreMi aside,
+  .habilidades article,
+  .experiencia article {
+    padding: 1.2rem;
+  }
+
+  .contacto form {
+    padding: 1.2rem;
   }
 }
 
@@ -506,5 +541,29 @@
 
   100% {
     background-position: 0%;
+  }
+}
+
+/* ==========================
+   ACCESIBILIDAD
+========================== */
+
+@media (prefers-reduced-motion: reduce) {
+  .main h2,
+  .contacto button {
+    animation: none;
+  }
+
+  .sobreMi article::before,
+  .sobreMi aside::before,
+  .habilidades article::before,
+  .experiencia article::before {
+    transition: none;
+  }
+
+  .habilidades article,
+  .experiencia article,
+  .contacto button {
+    transition: none;
   }
 }

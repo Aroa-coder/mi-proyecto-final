@@ -42,6 +42,8 @@
 
   background-size: 42px 42px;
   mask-image: linear-gradient(to bottom, black, transparent);
+  -webkit-mask-image: linear-gradient(to bottom, black, transparent);
+
   pointer-events: none;
 }
 
@@ -63,6 +65,12 @@
    CONTENIDO
 ========================= */
 
+/* Dejo las dos versiones para que no se rompa:
+   heroContent para CSS Modules moderno
+   hero-content por si tu JSX lo usa así con styles["hero-content"]
+*/
+
+.heroContent,
 .hero-content {
   position: relative;
   z-index: 1;
@@ -70,13 +78,16 @@
   display: flex;
   flex-direction: column;
   gap: 1.4rem;
+
+  width: 100%;
   max-width: 560px;
 }
 
+.heroContent h1,
 .hero-content h1 {
   margin: 0;
 
-  font-size: clamp(2rem, 4vw, 3.1rem);
+  font-size: clamp(2rem, 5vw, 3.1rem);
   line-height: 1.15;
   font-weight: 800;
 
@@ -85,6 +96,7 @@
     #ffffff,
     #c084fc,
     #22d3ee,
+    #ec4899,
     #ffffff
   );
 
@@ -96,10 +108,11 @@
   animation: neonTextMove 6s ease-in-out infinite;
 }
 
+.heroContent p,
 .hero-content p {
   margin: 0;
 
-  font-size: 1.05rem;
+  font-size: clamp(1rem, 2vw, 1.08rem);
   line-height: 1.7;
   color: #d8d6ff;
 }
@@ -112,8 +125,8 @@
   position: relative;
   z-index: 1;
 
-  width: 300px;
-  height: 300px;
+  width: clamp(230px, 32vw, 330px);
+  height: clamp(230px, 32vw, 330px);
   max-width: 100%;
 
   box-sizing: border-box;
@@ -122,7 +135,7 @@
   object-fit: cover;
   object-position: center top;
 
-  padding: 14px;
+  padding: clamp(10px, 1.5vw, 14px);
 
   background:
     linear-gradient(#090914, #090914) padding-box,
@@ -142,6 +155,7 @@
    BOTONES
 ========================= */
 
+.heroActions,
 .hero-actions {
   display: flex;
   gap: 1rem;
@@ -149,7 +163,9 @@
   justify-content: center;
 }
 
+.primaryButton,
 .primary-button,
+.secondaryButton,
 .secondary-button {
   position: relative;
   overflow: hidden;
@@ -167,17 +183,19 @@
   transition:
     transform 0.35s ease,
     box-shadow 0.35s ease,
-    background 0.35s ease;
+    background-color 0.35s ease;
 }
 
+.primaryButton,
 .primary-button {
-  color: white;
+  color: #ffffff;
   background: linear-gradient(90deg, #8b5cf6, #22d3ee, #ec4899);
   background-size: 220%;
   box-shadow: 0 0 30px rgba(139, 92, 246, 0.45);
   animation: buttonGradientMove 5s ease infinite;
 }
 
+.primaryButton:hover,
 .primary-button:hover {
   transform: translateY(-4px);
   box-shadow:
@@ -185,28 +203,33 @@
     0 0 45px rgba(34, 211, 238, 0.45);
 }
 
+.secondaryButton,
 .secondary-button {
   color: #ffffff;
-  background: rgba(255, 255, 255, 0.08);
+  background-color: rgba(255, 255, 255, 0.08);
   border: 1px solid rgba(34, 211, 238, 0.45);
   backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
   box-shadow: inset 0 0 20px rgba(255, 255, 255, 0.03);
 }
 
+.secondaryButton:hover,
 .secondary-button:hover {
   transform: translateY(-4px);
-  background: rgba(34, 211, 238, 0.14);
+  background-color: rgba(34, 211, 238, 0.14);
   box-shadow: 0 0 25px rgba(34, 211, 238, 0.3);
 }
 
-.primary-button:focus,
-.secondary-button:focus {
+.primaryButton:focus-visible,
+.primary-button:focus-visible,
+.secondaryButton:focus-visible,
+.secondary-button:focus-visible {
   outline: 3px solid #22d3ee;
   outline-offset: 4px;
 }
 
 /* =========================
-   DESKTOP
+   TABLET Y ESCRITORIO
 ========================= */
 
 @media (min-width: 768px) {
@@ -220,23 +243,20 @@
     padding: 4rem 3rem;
   }
 
+  .heroContent,
   .hero-content {
     align-items: flex-start;
     flex: 0 1 540px;
   }
 
+  .heroActions,
   .hero-actions {
     justify-content: flex-start;
-  }
-
-  .hero img {
-    width: 330px;
-    height: 330px;
   }
 }
 
 /* =========================
-   MOBILE
+   TABLET PEQUEÑA Y MÓVIL
 ========================= */
 
 @media (max-width: 768px) {
@@ -245,28 +265,30 @@
     gap: 2rem;
   }
 
-  .hero img {
-    width: 260px;
-    height: 260px;
-    padding: 12px;
+  .heroContent,
+  .hero-content {
+    align-items: center;
   }
 }
+
+/* =========================
+   MÓVIL PEQUEÑO
+========================= */
 
 @media (max-width: 420px) {
   .hero {
     padding: 2.5rem 1rem;
+    border-radius: 22px;
   }
 
-  .hero img {
-    width: 230px;
-    height: 230px;
-  }
-
+  .primaryButton,
   .primary-button,
+  .secondaryButton,
   .secondary-button {
     width: 100%;
   }
 
+  .heroActions,
   .hero-actions {
     width: 100%;
   }
@@ -316,5 +338,26 @@
       0 0 35px rgba(139, 92, 246, 0.75),
       0 0 75px rgba(34, 211, 238, 0.42),
       0 0 100px rgba(236, 72, 153, 0.2);
+  }
+}
+
+/* =========================
+   ACCESIBILIDAD
+========================= */
+
+@media (prefers-reduced-motion: reduce) {
+  .heroContent h1,
+  .hero-content h1,
+  .primaryButton,
+  .primary-button,
+  .hero img {
+    animation: none;
+  }
+
+  .primaryButton,
+  .primary-button,
+  .secondaryButton,
+  .secondary-button {
+    transition: none;
   }
 }

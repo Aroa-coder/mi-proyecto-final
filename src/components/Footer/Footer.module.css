@@ -2,84 +2,112 @@
    FOOTER FUTURISTA
 ========================= */
 
-footer {
+.footer {
   margin-top: 5rem;
   padding: 3rem 2rem;
 
-  /* Glass oscuro coherente con el header */
-  background: rgba(10, 14, 30, 0.75);
+  background:
+    radial-gradient(circle at 20% 20%, rgba(139, 92, 246, 0.18), transparent 35%),
+    radial-gradient(circle at 80% 30%, rgba(34, 211, 238, 0.12), transparent 35%),
+    rgba(10, 14, 30, 0.85);
+
   backdrop-filter: blur(14px);
   -webkit-backdrop-filter: blur(14px);
 
-  border-top: 1px solid rgba(151, 29, 135, 0.08);
+  border-top: 1px solid rgba(34, 211, 238, 0.25);
 
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 1.5rem;
+
+  box-shadow: 0 -10px 35px rgba(139, 92, 246, 0.12);
 }
 
 /* =========================
    NAV FOOTER
 ========================= */
 
-footer nav {
+.footerNav {
   display: flex;
-  gap: 2rem;
+  gap: 1rem;
   flex-wrap: wrap;
   justify-content: center;
 }
 
-/* LINKS FUTURISTAS */
-footer a {
-  color: rgba(229, 231, 235, 0.7);
-  font-weight: 500;
+/* =========================
+   LINKS
+========================= */
+
+.footerLink {
+  position: relative;
+
+  color: rgba(229, 231, 235, 0.78);
+  font-weight: 600;
   text-decoration: none;
 
-  padding: 6px 10px;
-  border-radius: 8px;
+  padding: 0.65rem 1rem;
+  border-radius: 999px;
 
-  transition: all 200ms ease;
+  background-color: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.08);
 
-  position: relative;
+  transition:
+    transform 0.3s ease,
+    color 0.3s ease,
+    background-color 0.3s ease,
+    border-color 0.3s ease,
+    box-shadow 0.3s ease;
 }
 
-/* hover neon coherente */
-footer a:hover {
+.footerLink:hover {
   color: #ffffff;
-  background: rgba(124, 58, 237, 0.15);
-  box-shadow: 0 0 18px rgba(124, 58, 237, 0.25);
+  transform: translateY(-3px);
+
+  background-color: rgba(124, 58, 237, 0.18);
+  border-color: rgba(34, 211, 238, 0.45);
+
+  box-shadow:
+    0 0 18px rgba(124, 58, 237, 0.35),
+    0 0 30px rgba(34, 211, 238, 0.16);
 }
 
-/* underline futurista */
-footer a::after {
-  content: '';
+.footerLink::after {
+  content: "";
   position: absolute;
-  left: 10px;
-  right: 10px;
-  bottom: 4px;
+  left: 16px;
+  right: 16px;
+  bottom: 7px;
   height: 2px;
 
   background: linear-gradient(90deg, #7c3aed, #22d3ee);
 
   transform: scaleX(0);
   transform-origin: left;
-  transition: transform 200ms ease;
+  transition: transform 0.3s ease;
   border-radius: 2px;
 }
 
-footer a:hover::after {
+.footerLink:hover::after {
   transform: scaleX(1);
+}
+
+.footerLink:focus-visible {
+  outline: 3px solid #22d3ee;
+  outline-offset: 4px;
 }
 
 /* =========================
    TEXTO
 ========================= */
 
-footer p {
-  color: rgba(229, 231, 235, 0.6);
+.footerText {
+  margin: 0;
+
+  color: rgba(229, 231, 235, 0.65);
   text-align: center;
   font-size: 0.9rem;
+  line-height: 1.6;
 }
 
 /* =========================
@@ -87,8 +115,40 @@ footer p {
 ========================= */
 
 @media (max-width: 768px) {
-  footer nav {
+  .footer {
+    margin-top: 3rem;
+    padding: 2.5rem 1.2rem;
+  }
+
+  .footerNav {
+    gap: 0.7rem;
+  }
+
+  .footerLink {
+    padding: 0.6rem 0.9rem;
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 420px) {
+  .footer {
+    padding: 2rem 1rem;
+  }
+
+  .footerNav {
     flex-direction: column;
-    gap: 0.8rem;
+    align-items: center;
+    width: 100%;
+  }
+
+  .footerLink {
+    width: 100%;
+    max-width: 260px;
+    justify-content: center;
+    text-align: center;
+  }
+
+  .footerText {
+    font-size: 0.85rem;
   }
 }

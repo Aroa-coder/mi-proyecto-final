@@ -1,27 +1,82 @@
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
+/* =========================
+   RESET GLOBAL
+========================= */
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-html{
-scroll-behavior:smooth;
+/* =========================
+   BASE
+========================= */
+
+html {
+  scroll-behavior: smooth;
+  background: #070711;
 }
 
-body{
+body {
+  min-width: 320px;
+  min-height: 100vh;
 
-background:
-linear-gradient(
-180deg,
-#09090f,
-#111827
-);
+  overflow-x: hidden;
 
-color:
-var(--text);
+  background:
+    linear-gradient(
+      180deg,
+      #09090f,
+      #111827
+    );
 
-font-family:
-Inter,
-sans-serif;
+  color: var(--text);
 
+  font-family:
+    Inter,
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    sans-serif;
+}
+
+/* =========================
+   ELEMENTOS BASE
+========================= */
+
+img,
+picture,
+video,
+canvas,
+svg {
+  max-width: 100%;
+  display: block;
+}
+
+button,
+input,
+textarea,
+select {
+  font: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+a {
+  color: inherit;
+}
+
+/* =========================
+   ACCESIBILIDAD
+========================= */
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
 }
