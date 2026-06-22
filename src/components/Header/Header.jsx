@@ -1,5 +1,5 @@
 import Navbar from './Navbar'
-import './Header.css'
+import './Header.module.css'
 
 function Header() {
   return (

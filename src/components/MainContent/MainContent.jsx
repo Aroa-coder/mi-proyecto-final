@@ -2,13 +2,12 @@
 import emailjs from "@emailjs/browser";
 import Hero from "../Hero/Hero";
 import ProjectCard from "../ProjectCard/ProjectCard";
-import "./MainContent.css";
+import styles from "./MainContent.module.css";
 
 function MainContent() {
 
   const enviarFormulario = async (e) => {
 
-    e.preventDefault();
 e.preventDefault();
     try {
 
@@ -35,6 +34,7 @@ e.preventDefault();
 
     <main
       id="main-content"
+      className={styles.main}
       tabIndex="-1"
     >
 
@@ -42,7 +42,8 @@ e.preventDefault();
 
       {/* TODO TU CONTENIDO ACTUAL */}
 
-      <section id="contacto">
+      <section id="contacto"
+      className={styles.contacto}>
 
         <h2>
           Contacto

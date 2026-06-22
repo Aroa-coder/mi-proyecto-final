@@ -1,8 +1,12 @@
+
 import React from 'react'
 import ReactDOM from 'react-dom/client'
 
 import App from './App'
 
+
+import './styles/variables.css'
+import './styles/globals.css'
 import './styles/index.css'
 import './styles/App.css'
 
@@ -13,3 +17,4 @@ ReactDOM.createRoot(
     <App />
   </React.StrictMode>
 )
+

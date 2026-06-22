@@ -1,12 +1,14 @@
-import './Hero.css'
+
+import styles from "./Hero.module.css";
 
 function Hero() {
   return (
     <section
       id="inicio"
-      className="hero"
+      className={styles.hero}
     >
-      <div className="hero-content">
+
+      <div className={styles["hero-content"]}>
 
         <h1>
           Aroa Martín de la Rubia 🌸
@@ -19,18 +21,18 @@ function Hero() {
           modernas y escalables.
         </p>
 
-        <div className="hero-actions">
+        <div className={styles["hero-actions"]}>
 
           <a
             href="#proyectos"
-            className="primary-button"
+            className={styles["primary-button"]}
           >
             Ver proyectos
           </a>
 
           <a
             href="#contacto"
-            className="secondary-button"
+            className={styles["secondary-button"]}
           >
             Contactar
           </a>
@@ -46,7 +48,8 @@ function Hero() {
       />
 
     </section>
-  )
+  );
 }
 
-export default Hero
+export default Hero;
+

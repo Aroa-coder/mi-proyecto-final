@@ -37,43 +37,119 @@
 }
 
 /* Botones */
-.hero-actions {
-  display: flex;
-  gap: 1rem;
-  flex-wrap: wrap;
-  justify-content: center;
+
+.hero-actions{
+
+display:flex;
+
+gap:1rem;
+
+flex-wrap:wrap;
+
+justify-content:center;
+
 }
 
 .primary-button,
-.secondary-button {
-  display: inline-block;
-  padding: .9rem 1.4rem;
-  border-radius: 10px;
-  text-decoration: none;
-  font-weight: 600;
-  transition: transform 150ms ease, box-shadow 150ms ease;
+.secondary-button{
+
+display:inline-flex;
+
+align-items:center;
+
+justify-content:center;
+
+padding:14px 28px;
+
+border-radius:999px;
+
+text-decoration:none;
+
+font-weight:600;
+
+transition:.35s;
+
 }
 
-.primary-button {
-  background: #6c4ab6;
-  color: white;
+.primary-button{
+
+background:
+linear-gradient(
+90deg,
+#8B5CF6,
+#22D3EE
+);
+
+color:white;
+
+box-shadow:
+0 0 30px
+rgba(139,92,246,.25);
+
 }
 
-.secondary-button {
-  background: #8a68d1;
-  color: white;
+.primary-button:hover{
+
+transform:translateY(-4px);
+
+box-shadow:
+0 0 45px
+rgba(139,92,246,.5);
+
 }
 
-.primary-button:hover,
-.secondary-button:hover {
-  transform: translateY(-2px);
+.secondary-button{
+
+display:inline-flex;
+
+align-items:center;
+
+justify-content:center;
+
+padding:14px 28px;
+
+border-radius:999px;
+
+text-decoration:none;
+
+font-weight:600;
+
+color:#222;
+
+background:
+rgba(255,255,255,.7);
+
+border:
+1px solid
+rgba(255,255,255,.7);
+
+backdrop-filter:
+blur(20px);
+
+}
+
+.secondary-button:hover{
+
+transform:
+translateY(-4px);
+
+background:
+rgba(255,255,255,.95);
+
 }
 
 .primary-button:focus,
-.secondary-button:focus {
-  outline: 3px solid #5b8cff;
-  outline-offset: 4px;
+.secondary-button:focus{
+
+outline:
+3px solid
+#5b8cff;
+
+outline-offset:
+4px;
+
 }
+
 
 /* =========================
    DESKTOP

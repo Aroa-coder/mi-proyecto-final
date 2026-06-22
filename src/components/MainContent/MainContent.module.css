@@ -138,77 +138,95 @@
    CONTACTO
 ========================== */
 
-#contacto {
-  text-align: center;
+.contacto{
+
+max-width:800px;
+
+margin:0 auto;
+
+text-align:center;
+
 }
 
-#contacto form {
-  display: flex;
-  flex-direction: column;
-  gap: 1.25rem;
-  max-width: 700px;
-  margin-inline: auto;
+.contacto form{
+
+display:flex;
+
+flex-direction:column;
+
+gap:1.5rem;
+
+margin-top:2rem;
+
 }
 
-#contacto div {
-  display: flex;
-  flex-direction: column;
+.contacto form div{
+
+display:flex;
+
+flex-direction:column;
+
+align-items:flex-start;
+
+width:100%;
+
 }
 
-#contacto label {
-  margin-bottom: .5rem;
-  font-weight: 600;
+.contacto label{
+
+margin-bottom:.5rem;
+
+font-weight:600;
+
 }
 
-#contacto input,
-#contacto textarea {
-  padding: 1rem;
-  border: 2px solid #d6d6d6;
-  border-radius: 14px;
-  font-size: 1rem;
-  background: white;
-  transition: transform .2s, border-color .2s, box-shadow .2s;
+.contacto input,
+.contacto textarea{
+
+width:100%;
+
+padding:1rem;
+
+font-size:1rem;
+
+border:2px solid #d6d6d6;
+
+border-radius:16px;
+
+background:white;
+
 }
 
-/* Hover */
+.contacto textarea{
 
-#contacto input:hover,
-#contacto textarea:hover {
-  border-color: #bfa5ec;
+min-height:180px;
+
+resize:vertical;
+
 }
 
-/* Focus */
+.contacto button{
 
-#contacto input:focus,
-#contacto textarea:focus {
-  border-color: #6c4ab6;
-  box-shadow: 0 0 0 4px rgba(108,74,182,.15);
-  outline: none;
-  transform: translateY(-1px);
+align-self:center;
+
+padding:1rem 2rem;
+
+border:none;
+
+border-radius:999px;
+
+background:
+linear-gradient(
+90deg,
+#8B5CF6,
+#22D3EE
+);
+
+color:white;
+
+font-weight:700;
+
 }
-
-/* Textarea */
-
-#contacto textarea {
-  resize: vertical;
-  min-height: 180px;
-}
-
-#contacto button {
-  align-self: center;
-  padding: .9rem 1.6rem;
-  border: none;
-  border-radius: 10px;
-  background: #6c4ab6;
-  color: white;
-  cursor: pointer;
-  transition: transform .25s;
-}
-
-#contacto button:hover {
-  transform: translateY(-2px);
-}
-
 
 /* ==========================
    RESPONSIVE (OPTIMIZADO Y AUTO-AJUSTABLE)
@@ -227,3 +245,97 @@
     align-items: stretch;
   }
 }
+
+
+section{
+padding:4rem 1.5rem;
+}
+
+#contacto{
+
+max-width:900px;
+
+margin:0 auto;
+
+}
+
+#contacto form{
+
+display:grid;
+
+gap:1.25rem;
+
+max-width:700px;
+
+margin:2rem auto 0;
+
+}
+
+#contacto form div{
+
+display:flex;
+
+flex-direction:column;
+
+align-items:flex-start;
+
+}
+
+#contacto label{
+
+margin-bottom:.5rem;
+
+font-weight:600;
+
+}
+
+#contacto input,
+#contacto textarea{
+
+width:100%;
+
+padding:1rem;
+
+font-size:1rem;
+
+border-radius:14px;
+
+border:2px solid #d9d9d9;
+
+background:white;
+
+}
+
+#contacto textarea{
+
+min-height:180px;
+
+resize:vertical;
+
+}
+
+#contacto button{
+
+margin:auto;
+
+padding:1rem 2rem;
+
+border:none;
+
+border-radius:999px;
+
+background:
+linear-gradient(
+90deg,
+#8B5CF6,
+#22D3EE
+);
+
+color:white;
+
+font-weight:700;
+
+cursor:pointer;
+
+}
+
