@@ -71,7 +71,7 @@ function MainContent() {
           technologies="HTML · CSS · Multimedia"
           buttonText="Ver proyecto"
           buttonLink="https://web-audio-video.netlify.app"
-          image="/images/project.png"
+          image="/images/project.webp"
           alt="Captura de una landing page con vídeo y sonido"
         />
 
@@ -81,7 +81,7 @@ function MainContent() {
           technologies="HTML · CSS · JavaScript"
           buttonText="Ver proyecto"
           buttonLink="https://calculadora-ivajavascript.netlify.app"
-          image="/images/project2.png"
+          image="/images/project2.webp"
           alt="Aplicación para calcular importe total aplicando IVA"
         />
 
@@ -91,7 +91,7 @@ function MainContent() {
           technologies="HTML · CSS · JavaScript"
           buttonText="Ver proyecto"
           buttonLink="https://landing-page-cursos.netlify.app"
-          image="/images/project3.png"
+          image="/images/project3.webp"
           alt="Landing Page con asistente virtual integrado"
         />
       </section>

@@ -23,10 +23,13 @@ function Hero() {
       </div>
 
       <img
-        src="/images/profile.jpg"
-        alt="Fotografía profesional de Aroa Martín"
-        loading="lazy"
-      />
+  src="/images/profile.webp"
+  alt="Fotografía profesional de Aroa Martín"
+  width="320"
+  height="320"
+  fetchPriority="high"
+  decoding="async"
+/>
     </section>
   );
 }

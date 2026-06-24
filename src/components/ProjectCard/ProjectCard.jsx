@@ -13,11 +13,13 @@ function ProjectCard({
     <article className={styles.card}>
       <div className={styles.imageWrapper}>
         <img
-          src={image}
-          alt={alt}
-          className={styles.image}
-          loading="lazy"
-        />
+  src={image}
+  alt={alt}
+  width="500"
+  height="300"
+  loading="lazy"
+  decoding="async"
+/>
       </div>
 
       <div className={styles.content}>
