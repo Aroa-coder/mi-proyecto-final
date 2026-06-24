@@ -8,7 +8,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 0.5rem;
+  gap: 1rem;
 
   list-style: none;
   padding: 0;
@@ -24,7 +24,10 @@
   align-items: center;
   justify-content: center;
 
-  padding: 0.7rem 1rem;
+  min-height: 48px;
+  min-width: 48px;
+
+  padding: 0 1rem;
   border-radius: 999px;
 
   color: #f8f7ff !important;
@@ -42,7 +45,6 @@
     border-color 0.3s ease,
     box-shadow 0.3s ease;
 }
-
 .navLink::before {
   content: "";
   position: absolute;

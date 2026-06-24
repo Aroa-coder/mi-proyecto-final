@@ -47,12 +47,13 @@ function ChatBot() {
       {isOpen && (
         <section
           className="chatbot-panel"
+          aria-labelledby="chatbot-title"
           aria-live="polite"
         >
           <header className="chatbot-header">
 
             <div>
-              <h2>
+              <h2 id="chatbot-title">
                 Asistente virtual
               </h2>
 

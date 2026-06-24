@@ -18,3 +18,38 @@ img {
   max-width: 100%;
   display: block;
 }
+
+/* ==========================
+   FIX LIGHTHOUSE TOUCH TARGETS
+========================== */
+
+a,
+button {
+  min-height: 48px;
+}
+
+.navLink,
+.primaryButton,
+.primary-button,
+.secondaryButton,
+.secondary-button,
+.button,
+.footerLink,
+.chatbot-toggle,
+.chatbot-close,
+.chatbot-options button {
+  min-width: 48px;
+  min-height: 48px;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.navList,
+.footerNav,
+.heroActions,
+.hero-actions,
+.chatbot-options {
+  gap: 0.85rem;
+}
